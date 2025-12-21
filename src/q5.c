@@ -1,1 +1,20 @@
-// Write a C program that dynamically allocates memory for a string entered by the user and finds its length using pointers.
+#include <stdio.h>
+int main() {
+    char str[100];
+    char *ptr;
+    int length = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", str);
+
+    ptr = str;
+
+    while (*ptr != '\0') {
+        length++;
+        ptr++;
+    }
+
+    printf("The length of the string is: %d\n", length);
+
+    return 0;
+}
