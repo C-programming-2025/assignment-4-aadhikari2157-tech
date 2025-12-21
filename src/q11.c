@@ -1,2 +1,23 @@
-// Write a C program to create a file and write a user-entered string into it. Then display a 
-// message confirming that the file has been written successfully.
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char str[100];
+
+    fp = fopen("data.txt", "w");
+
+    if (fp == NULL) {
+        printf("Error opening file");
+        return 1;
+    }
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    fprintf(fp, "%s", str);
+    fclose(fp);
+
+    printf("File has been written successfully");
+
+    return 0;
+}
